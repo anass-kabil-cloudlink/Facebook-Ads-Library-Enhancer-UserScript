@@ -1,37 +1,35 @@
 Facebook Ads Library Enhancer UserScript
 
-Description:
+This UserScript enhances the visibility and control of the Facebook Ads Library interface. It provides features to customize URLs, apply filters to ad blocks, and control scrolling behavior.
 
-Enhance the visibility and control of the Facebook Ads Library interface by providing additional functionalities such as URL customization, ad filtering, and automatic scrolling.
+Instructions
 
-Features:
+1. Install a browser extension like Tampermonkey.
+2. Create a new script and paste the provided code.
+3. Save the script to apply the enhancements on the Facebook Ads Library page.
 
-- URL Customization: Modify URL parameters directly from the page for easy saving and reuse of filter configurations.
-- Ad Control: Filter ads based on the minimum number of ads specified by the user.
-- Automatic Scrolling: Automatically scroll to load more items in the Ads Library interface.
+Features
 
-Installation:
+URL Customization
 
-1. Install a user script manager like Tampermonkey.
-2. Create a new script and copy the provided script into the editor.
-3. Save the script and ensure it is enabled for the Facebook Ads Library domain.
+- Click on the 'URL Form' button to customize URL parameters.
+- Enter values for parameters and click 'Apply Filter' to open the customized URL in a new tab.
 
-Usage:
+Ad Control
 
-- URL Customization: Customize URL parameters by toggling on/off specific parameters and open the customized URL.
-- Ad Control: Specify the minimum number of ads to keep and apply the filter to display relevant ads.
-- Automatic Scrolling: Start and stop automatic scrolling to load more items in the Ads Library.
+- Set the minimum number of ads to keep using the input field.
+- Click 'Apply Filter' to filter out ads based on the specified criteria.
 
-How It Works:
+Scrolling Control
 
-1. Control Panel: Positioned at the top-right corner, provides toggle buttons for different functionalities.
-2. URL Customization Form: Modify URL parameters for personalized filtering options.
-3. Ad Control Form: Set the minimum number of ads to keep and apply the filter to display relevant ads.
-4. Scrolling Control Panel: Enable automatic scrolling with the option to link ad control for filtered results.
+- Check the 'Connect with controlAds' checkbox to Apply the ads control Filter within the scrolling behavior.
+- Click 'Apply Filter' button to start scrolling to the bottom of the page.
+- The script will run the filter function if both scrolling and checkbox are active.
 
-Notes:
+Notes
 
-- The script dynamically updates URL parameters, applies ad filters, and enables automatic scrolling based on user interactions.
-- Ensure proper configuration and interaction with the provided elements for an enhanced Ads Library experience.
+- The script includes three main functionalities for URL customization, ad filtering, and scrolling control.
+- Toggle buttons are provided for easy access to each feature.
+- Customize and enhance your experience on the Facebook Ads Library page with this UserScript.
 
-Enjoy enhanced visibility and control over the Facebook Ads Library with this UserScript!
+Enjoy enhancing your Facebook Ads Library interface with this versatile UserScript!
