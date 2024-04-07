@@ -100,18 +100,38 @@ adControlForm.style.display = 'none'; // Initially hidden
 // Third element (button)
 
 // Create a button element
-const scrollButton = document.createElement('button');
-scrollButton.innerText = 'Start Scrolling';
-document.body.appendChild(scrollButton);
-scrollButton.style.zIndex = 1000;
+const scrollContainer = document.createElement('div');
 
-scrollButton.style.display = 'none'; // Initially hidden
+    scrollContainer.innerHTML = `
+    <label for="connectControl">Connect with controlAds:</label>
+    <input type="checkbox" id="connectControl" >
+    <button id="connecControlButton">Apply Filter</button>
+`;
+document.body.appendChild(scrollContainer);
+    scrollContainer.style.cssText = `
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 9999;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: none; // Initially hidden
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    flex-direction: column;
+
+`;
+
+
+scrollContainer.style.display = 'none'; // Initially hidden
 // Add any additional styles or event listeners to scrollButton here
 
 // Create toggle elements
 createToggleElement('urlCustomizationForm', 'URL Form', urlCustomizationForm);
 createToggleElement('adControlForm', 'Ad Control', adControlForm);
-createToggleElement('scrollButton', 'Scroll', scrollButton);
+createToggleElement('scrollButton', 'Scroll', scrollContainer);
 
 // Append the control panel to the body
 document.body.appendChild(controlPanel);
@@ -237,6 +257,7 @@ document.getElementById('applyFilterBtn').addEventListener('click', applyFilter)
 //-------------third script functions (scroller)-----------
 
 let scrolling = false;
+let applyFilterCheckbox = document.getElementById("connectControl");
 
 // Function to scroll to the bottom
 const scrollToBottom = () => {
@@ -249,6 +270,9 @@ const waitForItemsToLoad = () => {
     mutations.forEach((mutation) => {
       if (mutation.addedNodes.length) {
         scrollToBottom();
+        if (applyFilterCheckbox.checked && scrolling) {
+          applyFilter();
+        }
       }
     });
   });
@@ -263,6 +287,8 @@ const waitForItemsToLoad = () => {
 let ScrollObserver;
 
 // Toggle scrolling on button click
+let scrollButton=document.getElementById("connecControlButton");
+
 scrollButton.onclick = () => {
   if (!scrolling) {
     scrolling = true;
