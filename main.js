@@ -136,7 +136,6 @@ document.body.appendChild(controlPanel);
 //------------ first script functions (Link save filters) ------------
 
 function updateUrlParams() {
-    const currentUrl = window.location.href;
     const urlParams = new URLSearchParams(window.location.search);
 
     urlCustomizationForm.innerHTML = '';
@@ -152,43 +151,40 @@ function updateUrlParams() {
         urlCustomizationForm.appendChild(paramDiv);
     }
 
-    // Add event listeners to toggle parameter buttons
-    document.querySelectorAll('.toggleParamBtn').forEach(button => {
-        button.addEventListener('click', function() {
-            const key = this.getAttribute('data-key');
-            const input = document.getElementById('input_' + key);
-
-            if (input.disabled) {
-                input.disabled = false;
-                this.previousElementSibling.style.textDecoration = 'none';
-                this.textContent = 'X';
-            } else {
-                input.disabled = true;
-                this.previousElementSibling.style.textDecoration = 'line-through';
-                this.textContent = '✔';
-            }
-        });
+    // Add buttons for controlling MutationObserver and updating the URL manually
+    const observerButton = document.createElement('button');
+    observerButton.textContent = 'Toggle Observer';
+    observerButton.addEventListener('click', function() {
+        if (observerButton.textContent === 'Start Observer') {
+            observer.observe(document.body, { childList: true, subtree: true });
+            observerButton.textContent = 'Stop Observer';
+        } else {
+            observer.disconnect();
+            observerButton.textContent = 'Start Observer';
+        }
     });
 
-    // Add a button to open the customized URL
-    const openButton = document.createElement('button');
-    openButton.id = 'openCustomizedUrlBtn';
-    openButton.textContent = 'Open Customized URL';
-    urlCustomizationForm.appendChild(openButton);
+    const updateUrlButton = document.createElement('button');
+    updateUrlButton.textContent = 'Update URL';
+    updateUrlButton.addEventListener('click', function() {
+        const newUrlParams = Array.from(urlCustomizationForm.querySelectorAll('input[type="text"]'))
+            .filter(input => !input.disabled)
+            .map(input => `${encodeURIComponent(input.id.replace('input_', ''))}=${encodeURIComponent(input.value)}`)
+            .join('&');
 
-    // Function to open the customized URL
-    openButton.addEventListener('click', function() {
-        let newUrl = currentUrl.split('?')[0] + '?';
-
-        document.querySelectorAll('#urlCustomizationForm input[type="text"]').forEach(input => {
-            const key = input.id.replace('input_', '');
-            if (!input.disabled) { // Only add parameter if input is not disabled
-                newUrl += `${encodeURIComponent(key)}=${encodeURIComponent(input.value)}&`;
-            }
-        });
-
-        window.open(newUrl.slice(0, -1), '_blank'); // Remove the last '&' from the URL
+        const newUrl = window.location.href.split('?')[0] + '?' + newUrlParams;
+        window.open(newUrl, '_blank');
     });
+
+    const runUrlButton = document.createElement('button');
+    runUrlButton.textContent = 'Run URL';
+    runUrlButton.addEventListener('click', function() {
+        updateUrlParams();
+    });
+
+    urlCustomizationForm.appendChild(observerButton);
+    urlCustomizationForm.appendChild(updateUrlButton);
+    urlCustomizationForm.appendChild(runUrlButton);
 }
 
 // Update form on initial page load
