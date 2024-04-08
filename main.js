@@ -76,7 +76,6 @@ urlCustomizationForm.style.cssText = `
 `;
 
 urlCustomizationForm.style.display = 'none'; // Initially hidden
-// Add your content for urlCustomizationForm here
 
 // Second div
 const adControlForm = document.createElement('div');
@@ -95,11 +94,9 @@ adControlForm.style.zIndex = '9999';
 document.body.appendChild(adControlForm);
 
 adControlForm.style.display = 'none'; // Initially hidden
-// Add your content for adControlForm here
 
-// Third element (button)
+// Third element (scroller)
 
-// Create a button element
 const scrollContainer = document.createElement('div');
 
     scrollContainer.innerHTML = `
@@ -126,7 +123,6 @@ document.body.appendChild(scrollContainer);
 
 
 scrollContainer.style.display = 'none'; // Initially hidden
-// Add any additional styles or event listeners to scrollButton here
 
 // Create toggle elements
 createToggleElement('urlCustomizationForm', 'URL Form', urlCustomizationForm);
