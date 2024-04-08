@@ -218,37 +218,40 @@ observer.observe(document, {
 
 //--------second script functions  (ads control) ------------
 
-// Function to apply the filter based on the minimum number of ads specified
 function applyFilter() {
-    const minAds = parseInt(document.getElementById('minAdsInput').value);
-    const divBlocks = document.querySelectorAll('div._7jvw');
+    const minAds = parseInt(document.getElementById('minAdsInput').value, 10);
+    if (isNaN(minAds)) return; // Exit if minAds is not a number
 
-    divBlocks.forEach(function(block) {
-        var text = block.textContent;
-        var startIndex = text.indexOf('use this creative and text');
+    const divBlocks = document.querySelectorAll('div._7jvw');
+    const blocksToRemove = []; // Use an array to store elements to remove
+
+    divBlocks.forEach(block => {
+        let text = block.textContent;
+        let startIndex = text.indexOf('use this creative and text');
 
         if (startIndex !== -1) {
-            var subText = text.substring(0, startIndex);
-            var numberValue = subText.match(/\d+ ads/); // Extract the first number from the text
+            let subText = text.substring(0, startIndex);
+            let numberValue = subText.match(/\d+ ads/); // Extract the first number followed by ' ads'
 
             if (numberValue) {
-                var numAds = parseInt(numberValue[0]);
+                let numAds = parseInt(numberValue[0], 10);
 
-                if (numAds < minAds || !text.includes('use this creative and text')) {
-                    block.style.display = 'none';
-                    block.parentNode.remove(); // This will remove the direct parent of the block
+                // Check whether to hide the block based on numAds
+                if (numAds < minAds) {
+                    blocksToRemove.push(block);
                 }
             }
         } else {
-            block.style.display = 'none'; // Hide blocks that do not contain 'use this creative and text'
-            block.parentNode.remove(); // This will remove the direct parent of the block
+            blocksToRemove.push(block);
         }
     });
+
+    // Remove all identified blocks in one operation to minimize DOM manipulation
+    blocksToRemove.forEach(block => block.parentNode && block.parentNode.remove());
 }
 
-
+// Event listener for the filter application button
 document.getElementById('applyFilterBtn').addEventListener('click', applyFilter);
-
 
 //-------------third script functions (scroller)-----------
 
@@ -290,11 +293,11 @@ scrollButton.onclick = () => {
     scrolling = true;
     scrollButton.innerText = 'Stop Scrolling';
 
-    // Start scrolling
+    // start scrolling
     scrollToBottom();
     ScrollObserver = waitForItemsToLoad();
   } else {
-    // Stop scrolling
+    // stop scrolling
     scrolling = false;
     scrollButton.innerText = 'Start Scrolling';
 
