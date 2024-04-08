@@ -222,7 +222,7 @@ function applyFilter() {
     const minAds = parseInt(document.getElementById('minAdsInput').value, 10);
     if (isNaN(minAds)) return; // Exit if minAds is not a number
 
-    const divBlocks = document.querySelectorAll('div._7jvw');
+    const divBlocks = document.querySelectorAll('div._7jvw.x2izyaf.x1hq5gj4.x1d52u69');
     const blocksToRemove = []; // Use an array to store elements to remove
 
     divBlocks.forEach(block => {
