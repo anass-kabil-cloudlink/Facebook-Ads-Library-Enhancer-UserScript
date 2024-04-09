@@ -32,4 +32,22 @@ Notes
 - Toggle buttons are provided for easy access to each feature.
 - Customize and enhance your experience on the Facebook Ads Library page with this UserScript.
 
+additional Notes
+apply these Filters on ads block to minify the page load resourses
+||static.xx.fbcdn.net/rsrc.php/v3iKjt4/*.js$script
+||static.xx.fbcdn.net/rsrc.php/y*.js$script
+||video.xx.fbcdn.net/v/*.mp4$media
+||static.xx.fbcdn.net/rsrc.php/v3iC_l4/y_/l/*.js$script
+||scontent.frak*^
+||video.frak*^
+||*frak*^
+||*.mp4$media
+||*.jpg$image
+||*.jpeg$image
+||*.png$image
+||*.gif$image
+||*.webp$image
+||*.svg$image
+
+
 Enjoy enhancing your Facebook Ads Library interface with this versatile UserScript!
