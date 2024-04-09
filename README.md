@@ -34,6 +34,7 @@ Notes
 
 additional Notes
 apply these Filters on ads block to minify the page load resourses
+
 ||static.xx.fbcdn.net/rsrc.php/v3iKjt4/*.js$script
 
 ||static.xx.fbcdn.net/rsrc.php/y*.js$script
