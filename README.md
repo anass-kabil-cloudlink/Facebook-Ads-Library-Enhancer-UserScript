@@ -36,33 +36,28 @@ additional Notes
 apply these Filters on ads block to minify the page load resourses
 
 ||static.xx.fbcdn.net/rsrc.php/v3iKjt4/*.js$script
-
 ||static.xx.fbcdn.net/rsrc.php/y*.js$script
-
 ||video.xx.fbcdn.net/v/*.mp4$media
 
 ||static.xx.fbcdn.net/rsrc.php/v3iC_l4/y_/l/*.js$script
-
 ||scontent.frak*^
-
 ||video.frak*^
-
 ||*frak*^
 
 ||*.mp4$media
-
 ||*.jpg$image
-
 ||*.jpeg$image
-
 ||*.png$image
 
 ||*.gif$image
-
 ||*.webp$image
-
 ||*.svg$image
 
 
+or enable request blocking at developer tools in your browser for these
+scontent.frak2-2.fna.fbcdn.net
+scontent.frak1-1.fna.fbcdn.net
+scontent.frak2-1.fna.fbcdn.net
+gateway.facebook.com/ws/realtime?x-dgw-appid=541639493889025&x-dgw-appversion=0&x-dgw-authtype=1%3A0&x-dgw-version=5&x-dgw-uuid=100065466140549&x-dgw-tier=prod&x-dgw-app-stream-group=group1
 
 Enjoy enhancing your Facebook Ads Library interface with this versatile UserScript!
