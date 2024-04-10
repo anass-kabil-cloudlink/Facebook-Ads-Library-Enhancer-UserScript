@@ -59,16 +59,16 @@ Apply these Filters on ads block to minify the page load resources:
 - || *.jpg$image
 - || *.jpeg$image
 - || *.png$image
--|| *.gif$image
--|| *.webp$image
--|| *.svg$image
+- || *.gif$image
+- || *.webp$image
+- || *.svg$image
 
 2.Alternatively, enable request blocking at developer tools in your browser for these:
 
--scontent.frak2-2.fna.fbcdn.net
--scontent.frak1-1.fna.fbcdn.net
--scontent.frak2-1.fna.fbcdn.net
--gateway.facebook.com/ws/realtime?x-dgw-appid=541639493889025&x-dgw-appversion=0&x-dgw-authtype=1%3A0&x-dgw-version=5&x-dgw-uuid=100065466140549&x-dgw-tier=prod&x-dgw-app-stream-group=group1
+- scontent.frak2-2.fna.fbcdn.net
+- scontent.frak1-1.fna.fbcdn.net
+- scontent.frak2-1.fna.fbcdn.net
+- gateway.facebook.com/ws/realtime?x-dgw-appid=541639493889025&x-dgw-appversion=0&x-dgw-authtype=1%3A0&x-dgw-version=5&x-dgw-uuid=100065466140549&x-dgw-tier=prod&x-dgw-app-stream-group=group1
 
 Feel free to contribute to this script by providing feedback or suggestions for improvement. You can also report any issues or bugs you encounter while using it.
 
