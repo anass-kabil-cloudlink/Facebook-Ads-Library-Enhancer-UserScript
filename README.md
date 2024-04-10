@@ -48,26 +48,27 @@ Usage
 Additional Notes
 Apply these Filters on ads block to minify the page load resources:
 1. using custom adblock filters
-|| static.xx.fbcdn.net/rsrc.php/v3iKjt4/*.js$script
-|| static.xx.fbcdn.net/rsrc.php/y*.js$script
-|| video.xx.fbcdn.net/v/*.mp4$media
-|| static.xx.fbcdn.net/rsrc.php/v3iC_l4/y_/l/*.js$script
-|| scontent.frak*^
-|| video.frak*^
-|| frak^
-|| *.mp4$media
-|| *.jpg$image
-|| *.jpeg$image
-|| *.png$image
-|| *.gif$image
-|| *.webp$image
-|| *.svg$image
+- || static.xx.fbcdn.net/rsrc.php/v3iKjt4/*.js$script
+- || static.xx.fbcdn.net/rsrc.php/y*.js$script
+-|| video.xx.fbcdn.net/v/*.mp4$media
+- || static.xx.fbcdn.net/rsrc.php/v3iC_l4/y_/l/*.js$script
+- || scontent.frak*^
+- || video.frak*^
+- || frak^
+- || *.mp4$media
+- || *.jpg$image
+- || *.jpeg$image
+- || *.png$image
+-|| *.gif$image
+-|| *.webp$image
+-|| *.svg$image
+
 2.Alternatively, enable request blocking at developer tools in your browser for these:
 
-scontent.frak2-2.fna.fbcdn.net
-scontent.frak1-1.fna.fbcdn.net
-scontent.frak2-1.fna.fbcdn.net
-gateway.facebook.com/ws/realtime?x-dgw-appid=541639493889025&x-dgw-appversion=0&x-dgw-authtype=1%3A0&x-dgw-version=5&x-dgw-uuid=100065466140549&x-dgw-tier=prod&x-dgw-app-stream-group=group1
+-scontent.frak2-2.fna.fbcdn.net
+-scontent.frak1-1.fna.fbcdn.net
+-scontent.frak2-1.fna.fbcdn.net
+-gateway.facebook.com/ws/realtime?x-dgw-appid=541639493889025&x-dgw-appversion=0&x-dgw-authtype=1%3A0&x-dgw-version=5&x-dgw-uuid=100065466140549&x-dgw-tier=prod&x-dgw-app-stream-group=group1
 
 Feel free to contribute to this script by providing feedback or suggestions for improvement. You can also report any issues or bugs you encounter while using it.
 
