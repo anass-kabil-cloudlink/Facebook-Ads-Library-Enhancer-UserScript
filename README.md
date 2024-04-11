@@ -13,7 +13,8 @@ To use this script, you need a browser extension like Tampermonkey. Follow the s
 3. Choose the "Dashboard" option.
 4. Navigate to the "Utilities" tab.
 5. In the "URL" section, enter the URL for this script:
-    https://raw.githubusercontent.com/anass-kabil-cloudlink/Facebook-Ads-Library-Enhancer-UserScript/main/main.js
+https://raw.githubusercontent.com/anass-kabil-cloudlink/Facebook-Ads-Library-Enhancer-UserScript/main/main.js?token=GHSAT0AAAAAACQWKTBK7R72BAAS4RC57XWGZQX4CIA
+
 7. Click the "Import" button to add the script to Tampermonkey.
 
 Features
