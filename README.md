@@ -70,6 +70,7 @@ Apply these Filters on ads block to minify the page load resources:
 - scontent.frak2-1.fna.fbcdn.net
 - scontent.frak1-1.fna.fbcdn.net
 - scontent.frak1-2.fna.fbcdn.net
+- video.frak1-1.fna.fbcdn.net
   
 Feel free to contribute to this script by providing feedback or suggestions for improvement. You can also report any issues or bugs you encounter while using it.
 
