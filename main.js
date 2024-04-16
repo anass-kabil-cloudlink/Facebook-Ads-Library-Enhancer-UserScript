@@ -54,6 +54,16 @@ createToggleElement('scrollButton', 'Scroll', scrollContainer);
 
 document.body.appendChild(controlPanel);
 
+//4th script integration
+
+const exportButton = document.createElement('button');
+exportButton.textContent = 'Export to CSV';
+exportButton.style.cssText = `background:#0078D7;color:white;border:none;border-radius:5px;padding:5px 10px;cursor:pointer;margin-top:5px;display:none;`;
+
+
+
+createToggleElement('exportButton', 'Export to CSV', exportButton);
+
 
 //------------ first script functions (Link save filters) ------------
 
@@ -153,12 +163,21 @@ function updateUrlParams() {
 
 
 //--------second script functions  (ads control) ------------
+/*function removeContentElements() {
+    const elementsToRemove = document.querySelectorAll("div.x1ywc1zp.x78zum5.xl56j7k.x1e56ztr.xh8yej3");
+    elementsToRemove.forEach(element => {
+        element.remove();
+    });
+    }*/
 
 function applyFilter() {
+
     const minAds = parseInt(document.getElementById('minAdsInput').value, 10);
     if (isNaN(minAds)) return; // Exit if minAds is not a number
 
-    const divBlocks = document.querySelectorAll('div._7jvw.x2izyaf.x1hq5gj4.x1d52u69');
+    const divBlocks = document.querySelectorAll("#content > div > div:nth-child(1) > div > div.x8bgqxi.x1n2onr6 > div._8n_0 > div > div.x1dr75xp.xh8yej3.x16md763 > div.xrvj5dj.xdq2opy.xexx8yu.xbxaen2.x18d9i69.xbbxn1n.xdoe023.xbumo9q.x143o31f.x7sq92a.x1crum5w > div");
+
+
     const blocksToRemove = []; // Use an array to store elements to remove
 
     divBlocks.forEach(block => {
@@ -183,7 +202,7 @@ function applyFilter() {
     });
 
     // Remove all identified blocks in one operation to minimize DOM manipulation
-    blocksToRemove.forEach(block => block.parentNode && block.parentNode.remove());
+    blocksToRemove.forEach(block => block && block.remove());
 }
 
 // Event listener for the filter application button
@@ -242,6 +261,24 @@ scrollButton.onclick = throttle(() => {
   }
 }, 100);
 
+//------------ 4th  script functions (export csv) ------------
 
+exportButton.onclick = function() {
+    const elements = document.querySelectorAll("#content > div > div:nth-child(1) > div > div.x8bgqxi.x1n2onr6 > div._8n_0 > div > div.x1dr75xp.xh8yej3.x16md763 > div.xrvj5dj.xdq2opy.xexx8yu.xbxaen2.x18d9i69.xbbxn1n.xdoe023.xbumo9q.x143o31f.x7sq92a.x1crum5w > div > div > div.x1cy8zhl.x78zum5.xyamay9.x1pi30zi.x18d9i69.x1swvt13.x1n2onr6 > div > div.x78zum5.xdt5ytf.x2lwn1j.xeuugli");
+
+    let csvContent = "data:text/csv;charset=utf-8,";
+
+    elements.forEach((element, index) => {
+        const innerText = element.innerText.replace(/\n/g, ',');
+        csvContent += index === 0 ? innerText : "\n" + innerText;
+    });
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "data.csv");
+    document.body.appendChild(link);
+    link.click();
+};
 
 })();
