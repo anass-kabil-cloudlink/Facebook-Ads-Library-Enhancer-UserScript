@@ -2,69 +2,61 @@ Facebook Ads Library Enhancer
 
 Description
 
-This user script enhances the visibility and control of the Facebook Ads Library interface. It provides features to customize the URL parameters, control the display of ads based on a minimum number, and enable automatic scrolling for continuous loading and filtering of ads.
+# Facebook Ads Library Enhancer Script - Product Research Strategy Document
 
-Installation
+## Purpose:
+The Facebook Ads Library Enhancer script serves as a strategic tool to support product research efforts by offering enhanced visibility and control within the Facebook Ads Library interface. This document outlines a starting strategy to leverage the script effectively for product research purposes.
 
-To use this script, you need a browser extension like Tampermonkey. Follow the steps below:
+## Strategy Overview:
+1. **Identifying Scalable Products**:
+   - Use the script to identify ads that showcase compelling creatives, indicating potential scalability for the advertised products.
+   - Analyze the number of ads using similar creatives to gauge the advertiser's investment in the product.
 
-1. Install the Tampermonkey extension for your browser (Chrome, Firefox, Safari, Opera Next, or Microsoft Edge).
-2. Click on the Tampermonkey icon in your browser toolbar.
-3. Choose the "Dashboard" option.
-4. Navigate to the "Utilities" tab.
-5. In the "URL" section, enter the URL for this script:
-https://raw.githubusercontent.com/anass-kabil-cloudlink/Facebook-Ads-Library-Enhancer-UserScript/main/main.js?token=GHSAT0AAAAAACQWKTBK7R72BAAS4RC57XWGZQX4CIA
+2. **Competitor Analysis**:
+   - Utilize the script to monitor competitors' ad strategies and creative approaches.
+   - Compare ad volumes and creative styles to gain insights into competitors' product positioning and marketing tactics.
 
-7. Click the "Import" button to add the script to Tampermonkey.
+3. **Market Trends Research**:
+   - Track trends in ad creatives and messaging by leveraging the script's URL customization and control features.
+   - Identify emerging patterns in ad campaigns to stay informed about market dynamics and consumer preferences.
 
-Features
+4. **Data Extraction and Analysis**:
+   - Export relevant ad data to a CSV file using the script's export feature for in-depth analysis.
+   - Conduct detailed analysis on ad performance metrics, creative elements, and audience targeting to refine product research strategies.
 
-- URL Customization Form
+## Implementation Steps:
+1. **Installation**:
+   - Install the Tampermonkey browser extension.
+   - Add the Facebook Ads Library Enhancer script to Tampermonkey for seamless integration.
 
-- Allows customization of URL parameters for Facebook Ads Library.
-- Start and stop observing URL changes.
-- Launch customized URL in a new tab.
-- Refresh URL to revert changes.
+2. **Customization**:
+   - Customize URL parameters to focus on specific ad categories or timeframes.
+   - Set minimum ad criteria to filter out less relevant ads and prioritize impactful creatives.
 
+3. **Research Execution**:
+   - Explore the Facebook Ads Library interface with enhanced visibility and control features provided by the script.
+   - Analyze ads using compelling creatives to identify potential product scalability opportunities.
 
-- Ad Control Panel
+4. **Documentation and Analysis**:
+   - Document key findings and insights from ad research using the script.
+   - Conduct thorough data analysis on exported ad data to inform product research strategies.
 
-- Set a minimum number of ads to keep displayed.
-- Apply filter to hide ads based on the specified minimum.
+## Next Steps:
+1. **Continuous Monitoring**:
+   - Regularly utilize the script to monitor ad trends, competitor activities, and market shifts.
+   - Stay proactive in adapting product research strategies based on evolving insights.
 
+2. **Feedback and Iteration**:
+   - Collect feedback from research findings and refine product research strategies accordingly.
+   - Iterate on research approaches to uncover new opportunities and refine existing product offerings.
 
-- Automatic Scrolling
-
-- Enable continuous scrolling for loading more ads.
-- Apply filter while scrolling for dynamic ad control.
-
-Usage
-
-1. Open the Facebook Ads Library interface.
-2. Customize URL parameters using the URL Form in the control panel.
-3. Set the minimum number of ads to keep using the Ad Control form.
-4. Enable scrolling and filtering by toggling the Scroll button in the control panel.
+3. **Collaboration and Knowledge Sharing**:
+   - Share insights gathered through the script with team members for collaborative decision-making.
+   - Foster a culture of knowledge sharing and continuous learning within the product research team.
 
 
 Additional Notes
-Apply these Filters on ads block to minify the page load resources:
-1. using custom adblock filters
-- || static.xx.fbcdn.net/rsrc.php/v3iKjt4/*.js$script
-- || static.xx.fbcdn.net/rsrc.php/y*.js$script
--|| video.xx.fbcdn.net/v/*.mp4$media
-- || static.xx.fbcdn.net/rsrc.php/v3iC_l4/y_/l/*.js$script
-- || scontent.frak*^
-- || video.frak*^
-- || frak^
-- || *.mp4$media
-- || *.jpg$image
-- || *.jpeg$image
-- || *.png$image
-- || *.gif$image
-- || *.webp$image
-- || *.svg$image
-
-2.Alternatively, enable request blocking at developer tools in your browser for these:
+ enable request blocking at developer tools in your browser to minify the page load resources:
 
 - scontent.frak2-2.fna.fbcdn.net
 - scontent.frak2-1.fna.fbcdn.net
