@@ -83,7 +83,6 @@ const observer = new MutationObserver(mutations => {
 });
 
 // The observer is not observing by default now. It will only start observing when the 'Start Observer' button is clicked.
-// The 'Start Observer' button is added in the updateUrlParams function.
 
 function updateUrlParams() {
     const urlParams = new URLSearchParams(window.location.search);
